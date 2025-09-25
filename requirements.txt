@@ -1,6 +1,26 @@
-mock==2.0.0
-pytest==3.2.0
-tox==2.7.0
-docutils==0.14
-Pygments>=2.7.4
-twine
+# ConfigWatcher - Production Dependencies
+# Pinned versions for reliable production deployment
+
+# Core dependencies for configuration file parsing
+PyYAML>=6.0,<7.0
+    # YAML configuration file support
+    # Version 6.0 is stable and widely compatible
+    # Upper bound prevents breaking changes
+
+# Filesystem monitoring with fallback support
+watchdog>=2.1.0,<4.0.0
+    # Cross-platform filesystem event monitoring
+    # Version 2.1.0+ has stable API and good Python 3.9+ support
+    # Version 3.0+ maintains backward compatibility
+    # Fallback to polling mode if watchdog fails
+
+# Optional: Advanced JSON Schema validation
+# Uncomment the following line if you need advanced JSON validation
+# jsonschema>=4.17.0,<5.0.0
+    # JSON Schema validation support
+    # Version 4.17.0+ has good performance and Python 3.9+ support
+    # Not required for basic ConfigWatcher functionality
+
+# Python version compatibility
+# This package supports Python 3.7+
+# Recommended: Python 3.8+ for best performance
